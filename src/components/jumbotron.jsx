@@ -1,7 +1,9 @@
-import React from 'react';
+import React from "react";
 
-export default () => {
-    return (
-        <img src="/images/75720b52593a8db4742aa27e248d2daebb0e0528.png" alt=""/>
-    )
-}
+export default ({ picture }) => {
+  return (
+    <div id="jumbotron">
+      <img src={picture} alt="article" />
+    </div>
+  );
+};
