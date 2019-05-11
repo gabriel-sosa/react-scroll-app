@@ -1,0 +1,50 @@
+@import "./variables";
+@import "./mixins";
+
+#sidebar {
+  margin-top: -150px;
+  width: 27%;
+  .background {
+    background-color: rgba(100, 100, 100, 0);
+    .sidebar-container {
+      background-color: map-get($color, yellow);
+      padding: 0 28px 40px;
+      margin-bottom: 30px;
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+      .shadow {
+        margin-left: -50px;
+        margin-top: -60px;
+        @include font(
+          map-get($fonts, display),
+          216px,
+          map-get($color, dark-yellow),
+          700
+        );
+      }
+      .hint {
+        padding: 28px;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      .title {
+        margin: -30px 0 20px;
+        @include font(
+          map-get($fonts, display),
+          26px,
+          map-get($color, pure-black),
+          700
+        );
+      }
+      button {
+        background-color: map-get($color, yellow);
+        border: 1px solid map-get($color, dark-blue);
+        width: 100%;
+        padding: 15px;
+        border-radius: 12px;
+      }
+    }
+  }
+}

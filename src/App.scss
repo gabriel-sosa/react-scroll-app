@@ -1,72 +1,30 @@
-@import "scss/_variables.scss";
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:300");
 
-#header,
-#header h1 {
-  margin: 0;
-}
+@import "scss/article.scss";
+@import "scss/header";
+@import "scss/jumbotron";
+@import "scss/sidebar";
+@import "scss/sugestions";
+@import "scss/mixins";
 
-#header h1 {
-  padding: 10px 50px;
-}
-
-#jumbotron {
-  width: 100vw;
-  max-height: 700px;
-  overflow: hidden;
-}
-
-#jumbotron img {
-  width: 110%;
-  position: relative;
-  left: -5%;
-  top: -100px;
-  z-index: -10;
+* {
+  box-sizing: border-box;
 }
 
 #container {
-  width: 50%;
-  max-width: 700px;
   margin: auto;
-  margin-top: -50px;
-  padding: 50px;
+  margin-top: -150px;
   background-color: white;
-  border-radius: 12px 12px 0 0;
-}
-
-.flex {
-  display: flex;
-  align-items: center;
-}
-
-.round {
-  border-radius: 50%;
-}
-
-.move-right {
-  margin-left: auto;
-}
-
-.background {
-  width: 250px;
-}
-
-.sidebar-container {
-  background-color: yellow;
-  padding: 20px;
-  margin: 20px;
-  position: relative;
-  z-index: 0;
-}
-
-.shadow {
-  position: absolute;
-  top: 0;
-  left: 0;
-  font-size: 75px;
-  color: white;
-  z-index: 5;
-}
-
-.sidebar-container *:not(.shadow) {
-  z-index: 10;
+  transition: all 0.25s;
+  @include flex(row, space-between, flex-start);
+  &.not-full {
+    width: 90%;
+    border-radius: 12px;
+    padding: 40px 8.5%;
+  }
+  &.full {
+    width: 100%;
+    border-radius: 0;
+    padding: 40px 13.5%;
+  }
 }

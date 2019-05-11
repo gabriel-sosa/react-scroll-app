@@ -1,0 +1,19 @@
+@import "./mixins";
+
+#sugestions {
+  margin: 70px 0;
+  height: 180px;
+  @include flex(column, space-evenly, center);
+  flex-wrap: wrap;
+  img {
+    border-radius: 6px;
+  }
+  .big {
+    height: 90%;
+    width: 30%;
+  }
+  .small {
+    height: 45%;
+    width: 15%;
+  }
+}

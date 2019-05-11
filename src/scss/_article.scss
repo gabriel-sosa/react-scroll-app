@@ -1,0 +1,57 @@
+@import "./mixins";
+@import "./variables";
+
+#article {
+  width: 50%;
+  h3 {
+    @include font(
+      map-get($fonts, display),
+      14px,
+      map-get($color, pure-black),
+      400
+    );
+  }
+  h1 {
+    @include font(
+      map-get($fonts, display),
+      36px,
+      map-get($color, pure-black),
+      700
+    );
+    margin: 20px 0;
+  }
+  p {
+    @include font(
+      map-get($fonts, paragraph),
+      16px,
+      map-get($color, dark-grey),
+      300
+    );
+  }
+  hr {
+    margin: 24px 0;
+    color: map-get($color, light-grey);
+  }
+  div {
+    display: flex;
+    align-items: center;
+    .round {
+      border-radius: 50%;
+    }
+    h4 {
+      @include font(
+        map-get($fonts, paragraph),
+        12px,
+        map-get($color, medium-grey),
+        300
+      );
+      margin: 0 10px;
+    }
+    .move-right {
+      margin-left: auto;
+    }
+    .icon {
+      margin-left: 20px;
+    }
+  }
+}

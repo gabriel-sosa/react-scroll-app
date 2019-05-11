@@ -1,0 +1,36 @@
+@import "./mixins";
+@import "./variables";
+
+#header,
+#header h1 {
+  margin: 0;
+}
+
+#header {
+  @include flex(row, flex-start, baseline);
+  padding: 20px 60px;
+  position: absolute;
+  background-color: map-get($color, pure-white);
+  width: 100%;
+  h1 {
+    @include font(
+      map-get($fonts, display),
+      20px,
+      map-get($color, pure-black),
+      700
+    );
+  }
+  div {
+    @include flex(row, center, center);
+    margin: auto;
+    h3 {
+      @include font(
+        map-get($fonts, paragraph),
+        14px,
+        map-get($color, medium-grey),
+        300
+      );
+      margin: 0 10px;
+    }
+  }
+}
