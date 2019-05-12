@@ -5,11 +5,9 @@
   margin-top: -150px;
   width: 27%;
   .background {
-    background-color: rgba(100, 100, 100, 0);
+    transition: all 0.25s;
     .sidebar-container {
       background-color: map-get($color, yellow);
-      padding: 0 28px 40px;
-      margin-bottom: 30px;
       border-radius: 12px;
       overflow: hidden;
       position: relative;
@@ -44,6 +42,59 @@
         width: 100%;
         padding: 15px;
         border-radius: 12px;
+      }
+      .picture-container {
+        background-color: map-get($color, pure-white);
+        display: flex;
+        flex-wrap: nowrap;
+        img {
+          border-radius: 12px;
+          width: 180px;
+          height: 180px;
+        }
+      }
+    }
+  }
+  .block {
+    background-color: rgba(74, 74, 74, 0);
+    .sidebar-container {
+      padding: 0 28px 40px;
+      margin-bottom: 30px;
+      .picture-container {
+        height: 0;
+        overflow: hidden;
+      }
+    }
+  }
+  .full {
+    background-color: rgba(74, 74, 74, 1);
+    padding: 75px;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    .sidebar-container {
+      padding: 0;
+      margin: 0;
+      .shadow {
+        display: none;
+      }
+      .hint {
+        display: none;
+      }
+      .title {
+        margin: 100px 50px;
+      }
+      button {
+        display: none;
+      }
+      .picture-container {
+        padding: 40px;
+        img {
+          margin: 10px;
+        }
       }
     }
   }

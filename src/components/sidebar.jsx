@@ -2,13 +2,20 @@ import React from "react";
 
 export default ({ sidebar }) => {
   const handleSubmit = e => {
-    alert("hello");
+    const block = e.target.parentElement.parentElement;
+    if (block.classList.contains("block")) {
+      block.classList.remove("block");
+      block.classList.add("full");
+    } else {
+      block.classList.remove("full");
+      block.classList.add("block");
+    }
   };
 
   let res;
   if (sidebar)
     res = sidebar.sidebar.map((value, i) => (
-      <div key={i} className="background">
+      <div key={i} className="background block">
         <div className="sidebar-container">
           <div className="shadow">{(i < 9 && "0") + (i + 1)}</div>
           {value.hint && (
@@ -19,6 +26,15 @@ export default ({ sidebar }) => {
           )}
           <h2 className="title">{value.title}</h2>
           {value.hint && <button onClick={handleSubmit}>Clicca qui</button>}
+          {value.picture && (
+            <div className="picture-container">
+              <img src={value.picture} alt="sidebar" />
+              <img src={value.picture} alt="sidebar" />
+              <img src={value.picture} alt="sidebar" />
+              <img src={value.picture} alt="sidebar" />
+              <img src={value.picture} alt="sidebar" />
+            </div>
+          )}
         </div>
       </div>
     ));
